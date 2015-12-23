@@ -1,0 +1,39 @@
+{
+  "name": "postcss-pseudo-class-any-button",
+  "description": "PostCSS plugin for targeting all button elements with :any-button selector",
+  "version": "0.0.0",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "button",
+    "pseudo",
+    "element"
+  ],
+  "repository": "andrepolischuk/postcss-pseudo-class-any-button",
+  "dependencies": {
+    "postcss": "^5.0.13",
+    "postcss-selector-parser": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.8.0",
+    "babel-cli": "^6.3.15",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "chokidar-cli": "^1.1.0",
+    "rimraf": "^2.4.3"
+  },
+  "main": "index.es5.js",
+  "scripts": {
+    "pretest": "npm run prepublish",
+    "test": "ava",
+    "tdd": "chokidar \"*.js\" --command \"npm run test\" --initial",
+    "prepublish": "babel --presets es2015,stage-0 index.js --out-file index.es5.js",
+    "postpublish": "rimraf index.es5.js && git push --follow-tags"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
+  "license": "MIT"
+}
