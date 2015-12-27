@@ -19,7 +19,6 @@
 }
 ```
 
-
 ## Install
 
 ```sh
@@ -27,6 +26,8 @@ npm install --save-dev postcss-pseudo-class-any-button
 ```
 
 ## Usage
+
+### PostCSS
 
 ```js
 var fs = require('fs');
@@ -37,6 +38,22 @@ var css = fs.readFileSync('input.css', 'utf8');
 var output = postcss([anyButton])
   .process(css)
   .css;
+```
+
+Gulp
+
+```js
+var gulp = require('gulp');
+var postcss = require('gulp-postcss');
+var anyButton = require('postcss-pseudo-class-any-button');
+
+gulp.task('css', function () {
+  return gulp.src('./src')
+    .pipe(postcss([
+      anyButton
+    ]))
+    .pipe(gulp.dest('./dist'));
+});
 ```
 
 ## License
