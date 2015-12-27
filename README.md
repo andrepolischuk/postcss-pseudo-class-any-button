@@ -40,7 +40,7 @@ var output = postcss([anyButton])
   .css;
 ```
 
-Gulp
+### Gulp
 
 ```js
 var gulp = require('gulp');
