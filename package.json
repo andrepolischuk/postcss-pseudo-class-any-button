@@ -1,7 +1,7 @@
 {
   "name": "postcss-pseudo-class-any-button",
   "description": "PostCSS plugin for targeting all button elements with :any-button selector",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "postcss",
     "css",
