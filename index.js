@@ -1,18 +1,16 @@
 import postcss from 'postcss';
 import parser from 'postcss-selector-parser';
 
-export default postcss.plugin('postcss-pseudo-class-any-button', () => {
-  return style => {
-    return new Promise(resolve => {
-      style.walkRules(rule => {
-        var selector = parser(transform).process(rule.selector).result;
-        if (selector !== rule.selector) rule.selector = selector;
-      });
-
-      resolve();
+export default postcss.plugin('postcss-pseudo-class-any-button', () =>
+  style => new Promise(resolve => {
+    style.walkRules(rule => {
+      var selector = parser(transform).process(rule.selector).result;
+      if (selector !== rule.selector) rule.selector = selector;
     });
-  };
-});
+
+    resolve();
+  })
+);
 
 function transform(selectors) {
   let button;
