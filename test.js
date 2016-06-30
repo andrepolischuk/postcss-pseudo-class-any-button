@@ -1,7 +1,9 @@
+/* eslint-disable max-len */
 import test from 'ava';
 import postcss from 'postcss';
 import anyButton from './index';
-const transform = input => postcss([anyButton]).process(input);
+
+const transform = input => postcss([ anyButton ]).process(input);
 
 test('return original', async t => {
   const res = await transform('button { border: 0; }');
