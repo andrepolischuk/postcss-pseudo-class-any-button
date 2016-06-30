@@ -1,6 +1,6 @@
 import test from 'ava';
 import postcss from 'postcss';
-import anyButton from './index.es5';
+import anyButton from './index';
 const transform = input => postcss([anyButton]).process(input);
 
 test('return original', async t => {
